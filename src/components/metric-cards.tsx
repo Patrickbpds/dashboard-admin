@@ -6,16 +6,18 @@ export type Metric = {
 };
 export function MetricCards({ metrics }: { metrics: Metric[] }) {
   return (
-    <div>
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {metrics.map((metric, index) => (
-        <div key={index}>
-          <div>
-            <div>{metric.title}</div>
+        <div key={index} className="border border-black">
+          <div className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <div className="text-sm font-medium">{metric.title}</div>
             {metric.icon ? metric.icon : null}
           </div>
           <div>
-            <div>{metric.value}</div>
-            {metric.change && <p>{metric.change}</p>}
+            <div className="text-2xl font-bold">{metric.value}</div>
+            {metric.change && (
+              <p className="text=xs text-muted-foreground">{metric.change}</p>
+            )}
           </div>
         </div>
       ))}
