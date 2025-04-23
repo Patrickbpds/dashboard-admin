@@ -1,25 +1,30 @@
 import { MetricCards, type Metric } from "../components/metric-cards";
+import { Users, DollarSign, CreditCard, Activity } from "lucide-react";
 
 const metrics: Metric[] = [
   {
     title: "users",
     value: 500,
     change: "+60% from last month",
+    icon: <Users className="h-4 w-4 text-muted-foreground" />,
   },
   {
     title: "Subscription",
     value: 300,
     change: "+100% from last month",
+    icon: <CreditCard className="h-4 w-4 text-muted-foreground" />,
   },
   {
     title: "Revenue",
     value: "$200",
     change: "+200% from last year",
+    icon: <DollarSign className="h-4 w-4 text-muted-foreground" />,
   },
   {
     title: "Last Month Subscriptions",
     value: 30,
     change: "+10% from last week",
+    icon: <Activity className="h-4 w-4 text-muted-foreground" />,
   },
 ];
 
