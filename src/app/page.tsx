@@ -65,7 +65,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
       <MetricCards metrics={metrics} />
       <div>
-        <UsersTable users={users} />
+        <UsersTable data={users} />
       </div>
     </main>
   );
