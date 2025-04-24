@@ -12,7 +12,7 @@ type User = {
   id?: number;
   firstName?: string;
   lastName?: string;
-  lastSignInAt?: string;
+  lastSignInAt?: number;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   emailAddresses?: { id: number; emailAddress: string; [key: string]: any }[];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
