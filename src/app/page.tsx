@@ -28,9 +28,36 @@ const metrics: Metric[] = [
     icon: <Activity className="h-4 w-4 text-muted-foreground" />,
   },
 ];
-const users: User[]= [
-  
-]
+const users: User[] = [
+  {
+    id: 1,
+    firstName: "Patrick",
+    lastName: "Silva",
+    lastSignInAt: 1708423800000,
+    emailAddresses: [
+      {
+        id: 101,
+        emailAddresses: "patrick.silva@example.com",
+      },
+    ],
+  },
+  {
+    id: 2,
+    firstName: "Alice",
+    lastName: "Smith",
+    lastSignInAt: 1708356300000,
+    emailAddresses: [
+      {
+        id: 201,
+        emailAddresses: "alice.sm@company.com",
+      },
+      {
+        id: 202,
+        emailAddresses: "alice.smith@personal.com",
+      },
+    ],
+  },
+];
 
 export default function Home() {
   return (
@@ -38,7 +65,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
       <MetricCards metrics={metrics} />
       <div>
-        <UsersTable />
+        <UsersTable users={users} />
       </div>
     </main>
   );
