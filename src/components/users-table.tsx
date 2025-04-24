@@ -8,7 +8,18 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-export function UsersTable() {
+type User = {
+  id?: number;
+  firstName?: string;
+  lastName?: string;
+  lastSignInAt?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  emailAddresses?: { id: number; emailAddress: string; [key: string]: any }[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+};
+
+export function UsersTable({ data }: { data: User[] }) {
   return (
     <Table>
       <TableHeader>
@@ -18,6 +29,17 @@ export function UsersTable() {
           <TableHead>Last Seen</TableHead>
         </TableRow>
       </TableHeader>
+      <TableBody>
+        {data.map((user) => (
+          <TableRow key={user.id}>
+            <TableCell>
+              {user.firstName} {user.lastName}
+            </TableCell>
+            <TableCell>{emailAddresses[0].emailAddress}</TableCell>
+            <TableCell>new Date(user.lastSignInAt).toLocaleString()</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
     </Table>
   );
 }

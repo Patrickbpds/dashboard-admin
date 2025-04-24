@@ -1,5 +1,5 @@
 import { MetricCards, type Metric } from "../components/metric-cards";
-import { UsersTable } from "../components/users-table";
+import { UsersTable, type User } from "../components/users-table";
 import { Users, DollarSign, CreditCard, Activity } from "lucide-react";
 
 const metrics: Metric[] = [
@@ -28,6 +28,9 @@ const metrics: Metric[] = [
     icon: <Activity className="h-4 w-4 text-muted-foreground" />,
   },
 ];
+const users: User[]= [
+  
+]
 
 export default function Home() {
   return (
