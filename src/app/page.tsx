@@ -37,7 +37,7 @@ const users: User[] = [
     emailAddresses: [
       {
         id: 101,
-        emailAddresses: "patrick.silva@example.com",
+        emailAddress: "patrick.silva@example.com",
       },
     ],
   },
@@ -49,11 +49,11 @@ const users: User[] = [
     emailAddresses: [
       {
         id: 201,
-        emailAddresses: "alice.sm@company.com",
+        emailAddress: "alice.sm@company.com",
       },
       {
         id: 202,
-        emailAddresses: "alice.smith@personal.com",
+        emailAddress: "alice.smith@personal.com",
       },
     ],
   },
