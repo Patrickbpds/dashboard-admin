@@ -9,12 +9,12 @@ import {
 } from "@/components/ui/table";
 
 type User = {
-  id?: number;
+  id: number;
   firstName?: string;
   lastName?: string;
-  lastSignInAt?: number;
+  lastSignInAt: number;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  emailAddresses?: { id: number; emailAddress: string; [key: string]: any }[];
+  emailAddresses: { id: number; emailAddress: string; [key: string]: any }[];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 };
@@ -35,8 +35,10 @@ export function UsersTable({ data }: { data: User[] }) {
             <TableCell>
               {user.firstName} {user.lastName}
             </TableCell>
-            <TableCell>{emailAddresses[0].emailAddress}</TableCell>
-            <TableCell>new Date(user.lastSignInAt).toLocaleString()</TableCell>
+            <TableCell>{user.emailAddresses[0].emailAddress}</TableCell>
+            <TableCell>
+              {new Date(user.lastSignInAt).toLocaleString()}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
