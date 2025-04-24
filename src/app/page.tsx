@@ -1,4 +1,5 @@
 import { MetricCards, type Metric } from "../components/metric-cards";
+import { UsersTable } from "../components/users-table";
 import { Users, DollarSign, CreditCard, Activity } from "lucide-react";
 
 const metrics: Metric[] = [
@@ -33,6 +34,9 @@ export default function Home() {
     <main className="container mx-auto p-4 space-y-4">
       <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
       <MetricCards metrics={metrics} />
+      <div>
+        <UsersTable />
+      </div>
     </main>
   );
 }
