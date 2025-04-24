@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-type User = {
+export type User = {
   id: number;
   firstName?: string;
   lastName?: string;
