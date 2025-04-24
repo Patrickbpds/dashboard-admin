@@ -13,10 +13,12 @@ type User = {
   firstName?: string;
   lastName?: string;
   lastSignInAt: number;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  emailAddresses: { id: number; emailAddress: string; [key: string]: any }[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
+  emailAddresses: {
+    id: number;
+    emailAddress: string;
+    [key: string]: unknown;
+  }[];
+  [key: string]: unknown;
 };
 
 export function UsersTable({ data }: { data: User[] }) {
