@@ -2,6 +2,7 @@ import { MetricCards, type Metric } from "../components/metric-cards";
 import { UsersTable, type User } from "../components/users-table";
 import { Users, DollarSign, CreditCard, Activity } from "lucide-react";
 import { AdBanner } from "../components/ad-banner";
+import { QuickLinks } from "@/components/quick-links";
 
 const metrics: Metric[] = [
   {
@@ -67,6 +68,7 @@ export default function Home() {
       <MetricCards metrics={metrics} />
       <div>
         <AdBanner />
+        <QuickLinks />
       </div>
       <div>
         <UsersTable data={users} />
