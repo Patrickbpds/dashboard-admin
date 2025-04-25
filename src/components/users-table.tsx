@@ -37,16 +37,18 @@ export function UsersTable({ data }: { data: User[] }) {
         {data.map((user) => (
           <TableRow key={user.id}>
             <TableCell>
-              <Avatar className="h-9 w-9">
-                <AvatarImage
-                  src="/globe.svg"
-                  alt={`${user.firstName} ${user.lastName}`}
-                ></AvatarImage>
-                <AvatarFallback>
-                  {user.firstName ? user.firstName[0] : ""}
-                </AvatarFallback>
-              </Avatar>
-              {user.firstName} {user.lastName}
+              <div className="flex items-center gap-3">
+                <Avatar className="h-9 w-9">
+                  <AvatarImage
+                    src="/globe.svg"
+                    alt={`${user.firstName} ${user.lastName}`}
+                  ></AvatarImage>
+                  <AvatarFallback>
+                    {user.firstName ? user.firstName[0] : ""}
+                  </AvatarFallback>
+                </Avatar>
+                {user.firstName} {user.lastName}
+              </div>
             </TableCell>
             <TableCell>{user.emailAddresses[0].emailAddress}</TableCell>
             <TableCell>
