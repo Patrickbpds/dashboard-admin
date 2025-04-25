@@ -8,6 +8,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 export type User = {
   id: number;
   firstName?: string;
@@ -35,6 +37,15 @@ export function UsersTable({ data }: { data: User[] }) {
         {data.map((user) => (
           <TableRow key={user.id}>
             <TableCell>
+              <Avatar className="h-9 w-9">
+                <AvatarImage
+                  src="/globe.svg"
+                  alt={`${user.firstName} ${user.lastName}`}
+                ></AvatarImage>
+                <AvatarFallback>
+                  {user.firstName ? user.firstName[0] : ""}
+                </AvatarFallback>
+              </Avatar>
               {user.firstName} {user.lastName}
             </TableCell>
             <TableCell>{user.emailAddresses[0].emailAddress}</TableCell>
