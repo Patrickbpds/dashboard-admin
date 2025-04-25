@@ -1,6 +1,7 @@
 import { MetricCards, type Metric } from "../components/metric-cards";
 import { UsersTable, type User } from "../components/users-table";
 import { Users, DollarSign, CreditCard, Activity } from "lucide-react";
+import { AdBanner } from "../components/ad-banner";
 
 const metrics: Metric[] = [
   {
@@ -64,6 +65,9 @@ export default function Home() {
     <main className="container mx-auto p-4 space-y-4">
       <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
       <MetricCards metrics={metrics} />
+      <div>
+        <AdBanner />
+      </div>
       <div>
         <UsersTable data={users} />
       </div>
