@@ -19,12 +19,15 @@ const links: Link[] = [
 
 export function QuickLinks() {
   return (
-    <Card>
-      <CardContent>
-        <h2>Quick Links</h2>
+    <Card className="bg-slate-200 border-none overflow-hidden">
+      <CardContent className="p-6 h-full flex flex-col">
+        <h2 className="text-lg md:text-lg font-bold mb-2">Quick Links</h2>
         <ul>
           {links.map((link, index) => (
-            <li key={index}>
+            <li
+              key={index}
+              className="mb-2 hover:underline md:text-normal text-sm"
+            >
               <Link href={link.href}>{link.text}</Link>
             </li>
           ))}
