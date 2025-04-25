@@ -66,7 +66,7 @@ export default function Home() {
     <main className="container mx-auto p-4 space-y-4">
       <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
       <MetricCards metrics={metrics} />
-      <div>
+      <div className="flex flex-row items-center md:flex-col space-x-4 space-y-4">
         <AdBanner />
         <QuickLinks />
       </div>
