@@ -1,4 +1,4 @@
-import image from "next/image";
+import Image from "next/image";
 import Link from "next/Link";
 import {
   Card,
@@ -13,7 +13,7 @@ export function AdBanner() {
       <Link href="/" className="block h-full">
         <CardContent className="p-0 h-full flex flex-row items-center">
           <div className="relative h-full w-1/2">
-            <image
+            <Image
               src="/logo-dashboard.png"
               alt="Mobile App Logo"
               width={200}
