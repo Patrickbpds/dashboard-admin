@@ -10,6 +10,8 @@ import {
 } from "./ui/sidebar";
 import { Home, Users, Settings, GitPullRequestArrow } from "lucide-react";
 
+import { usePathname } from "next/navigation";
+
 const sideBarItems: {
   name: string;
   href: string;
@@ -38,6 +40,7 @@ const sideBarItems: {
 ];
 
 export function AppSideBar() {
+  const pathname = usePathname();
   return (
     <Sidebar side="left">
       <SidebarHeader>
@@ -46,8 +49,8 @@ export function AppSideBar() {
       <SidebarContent>
         <SidebarMenu>
           {sideBarItems.map((item, index) => (
-            <SidebarMenuItem key={index} href={item.ref}>
-              <SidebarMenuButton>
+            <SidebarMenuItem key={index} href={item.ref}>   
+              <SidebarMenuButton isActive={pathname === item.href}>
                 <item.icon />
                 <span>{item.name}</span>
               </SidebarMenuButton>
