@@ -44,12 +44,13 @@ export function AppSideBar() {
   return (
     <Sidebar side="left">
       <SidebarHeader>
-        <SidebarTrigger />
+        {/*<SidebarTrigger />*/}
+        <h1 className="text-2xl font-bold text-primary">Admin Portal</h1>
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
           {sideBarItems.map((item, index) => (
-            <SidebarMenuItem key={index} href={item.ref}>   
+            <SidebarMenuItem key={index} href={item.ref}>
               <SidebarMenuButton isActive={pathname === item.href}>
                 <item.icon />
                 <span>{item.name}</span>
