@@ -5,6 +5,7 @@ import "./globals.css";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 
 import { Header } from "@/components/header";
+import { AppSideBar } from "@/components/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <SidebarProvider>
           <div className="flex h-screen overflow-hidden">
+            <AppSideBar />
             <SidebarInset className="flex-1 overflow-auto">
               <Header />
               {children}
