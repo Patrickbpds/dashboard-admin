@@ -13,7 +13,7 @@ import { Home, Users, Settings, GitPullRequestArrow } from "lucide-react";
 const sideBarItems: {
   name: string;
   href: string;
-  icon: React.ReactNode;
+  icon: React.ElementType;
 }[] = [
   {
     name: "Dashboard",
