@@ -32,10 +32,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SidebarProvider>
-          <SidebarInset>
-            <Header />
-            {children}
-          </SidebarInset>
+          <div className="flex h-screen overflow-hidden">
+            <SidebarInset className="flex-1 overflow-auto">
+              <Header />
+              {children}
+            </SidebarInset>
+          </div>
         </SidebarProvider>
       </body>
     </html>
