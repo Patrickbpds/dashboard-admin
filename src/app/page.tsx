@@ -3,6 +3,7 @@ import { UsersTable, type User } from "../components/users-table";
 import { Users, DollarSign, CreditCard, Activity } from "lucide-react";
 import { AdBanner } from "../components/ad-banner";
 import { QuickLinks } from "@/components/quick-links";
+import { ChartPie } from "@/components/chart-pie";
 
 import { getSubscriptionsCount } from "@/app/admin/actions";
 
@@ -77,6 +78,7 @@ export default async function Home() {
       </div>
       <div>
         <UsersTable data={users} />
+        <ChartPie />
       </div>
     </main>
   );
