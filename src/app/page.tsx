@@ -5,7 +5,10 @@ import { AdBanner } from "../components/ad-banner";
 import { QuickLinks } from "@/components/quick-links";
 import { ChartPie } from "@/components/chart-pie";
 
-import { getSubscriptionsCount } from "@/app/admin/actions";
+import {
+  getSubscriptionsCount,
+  getSubscriptionsBreakdown,
+} from "@/app/admin/actions";
 
 const users: User[] = [
   {
@@ -40,6 +43,7 @@ const users: User[] = [
 
 export default async function Home() {
   const subscriptions = await getSubscriptionsCount();
+  const subsBreakdown = await getSubscriptionsBreakdown();
 
   const metrics: Metric[] = [
     {
@@ -78,7 +82,7 @@ export default async function Home() {
       </div>
       <div>
         <UsersTable data={users} />
-        <ChartPie />
+        <ChartPie data={subsBreakdown} />
       </div>
     </main>
   );
