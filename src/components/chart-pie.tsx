@@ -10,6 +10,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  type ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
 
 export function ChartPie() {
   const data01 = [
@@ -28,15 +34,17 @@ export function ChartPie() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Pie
-          data={data01}
-          dataKey="value"
-          nameKey="name"
-          cx="50%"
-          cy="50%"
-          outerRadius={50}
-          fill="#8884d8"
-        />
+        <PieChart width={730} height={250}>
+          <Pie
+            data={data01}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={50}
+            fill="#8884d8"
+          />
+        </PieChart>
       </CardContent>
     </Card>
   );
