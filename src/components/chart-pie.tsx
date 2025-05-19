@@ -17,13 +17,16 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-export function ChartPie() {
-  const data01 = [
-    { name: "Group A", value: 400 },
-    { name: "Group B", value: 300 },
-    { name: "Group C", value: 300 },
-    { name: "Group D", value: 200 },
-  ];
+export function ChartPie({ data }) {
+  console.log(data);
+  const processedData = data.map((item, i) => {
+    const index = 1 + i;
+    return {
+      ...item,
+      total: parseInt(item.total, 10),
+      fill: `hsl(var(--chart-${index}))`,
+    };
+  });
 
   return (
     <Card>
@@ -36,9 +39,9 @@ export function ChartPie() {
       <CardContent>
         <PieChart width={730} height={250}>
           <Pie
-            data={data01}
-            dataKey="value"
-            nameKey="name"
+            data={processedData}
+            dataKey="total"
+            nameKey="plan"
             cx="50%"
             cy="50%"
             outerRadius={50}
